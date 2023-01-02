@@ -30,7 +30,7 @@ jobs:
     needs: changes
     if: ${{ needs.changes.outputs.names != '[]' }}
     name:  ${{matrix.name}} - ${{ matrix.environment }}
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
       matrix:
