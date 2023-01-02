@@ -36,7 +36,7 @@ jobs:
       matrix:
         # name: ${{ fromJSON(needs.changes.outputs.names) }}
          environment: [ test,prod]
-         node-version: [14.x, 16.x, 18.x]
+         node-version: [18.x]
     #defaults:
     #  run:
      #   shell: bash
