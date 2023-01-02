@@ -12,7 +12,7 @@ on:
 jobs:
   changes:
     name: Detect Changes in folder
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       names: ${{ steps.filter.outputs.changes }}
     steps:
