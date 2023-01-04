@@ -28,7 +28,7 @@ jobs:
             - 'folder2/**'
   deploy:
     needs: changes
-    if: ${{ needs.changes.outputs.names == 'folder1' }}
+    if: ${{ needs.changes.outputs.names == '["folder2"]' }}
     name:  ${{matrix.name}} - ${{ matrix.environment }}
     runs-on: ubuntu-latest
     strategy:
