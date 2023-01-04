@@ -28,7 +28,6 @@ jobs:
             - 'folder2/**'
   deploy:
     needs: changes
-    if: ${{ needs.changes.outputs.names == '["folder2"]' }}
     name:  ${{matrix.name}} - ${{ matrix.environment }}
     runs-on: ubuntu-latest
     strategy:
@@ -43,6 +42,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Checking the folder name
-        run: |
-         echo "Running for folder ${{ matrix.name }}"
+        run: echo "print b.js"
+        if: ${{ needs.changes.outputs.names == '["folder2"]' }}
+      - name: Checking the folder2    
+        run: echo "print a.js"
+        if: ${{ needs.changes.outputs.names == '["folder1"]' }}
+
+
   
