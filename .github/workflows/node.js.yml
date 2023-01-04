@@ -9,7 +9,7 @@ on:
 jobs:
    
   build:
-    if: folder1==true
+    if: testing_repo.folder1==true
 
     runs-on: ubuntu-latest
     
