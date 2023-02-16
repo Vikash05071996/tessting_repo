@@ -40,7 +40,6 @@ jobs:
         shell: bash
         working-directory: ${{ matrix.name }}
     steps:
-      - uses: docker/build-push-action@v2
       - name: Checking the folder name
         run: echo "print b.js"
         if: ${{ needs.changes.outputs.names == '["folder2"]' }}
